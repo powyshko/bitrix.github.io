@@ -17,6 +17,13 @@
     
   <script src="./bitrix.js"></script>
   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Получение элемента по его тегу
+    const widgetElement = document.querySelector('custom-element-widgets-settings');
+
+    // Добавление слушателя события
+    widgetElement.addEventListener('onAuthError', callbackAuthError);
+  });
   // Определение функции callback
   function callbackAuthError(event) {
     // ваш код обработки ошибки аутентификации здесь

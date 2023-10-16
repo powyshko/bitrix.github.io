@@ -13,6 +13,7 @@
         auth-key="200215|WIeroujrtBoKQbyrZHbsoTdau8TAkdmjVkeBHveu"
         hide-code="true"
         @onAuthError="callbackAuthError"
+        @onWidgetLoad="callbackWidgetLoad"
     ></custom-element-widgets-settings>
     
   <script src="./bitrix.js"></script>
@@ -23,12 +24,17 @@
 
     // Добавление слушателя события
     widgetElement.addEventListener('onAuthError', callbackAuthError);
+    widgetElement.addEventListener('onWidgetLoad', callbackWidgetLoad);
   });
   // Определение функции callback
   function callbackAuthError(event) {
     // ваш код обработки ошибки аутентификации здесь
     console.error('Auth Error:', event.detail);
     console.log(event);
+  }
+
+  function callbackWidgetLoad(event) {
+    console.log('callbackWidgetLoad', event);
   }
 </script>
 </body>
